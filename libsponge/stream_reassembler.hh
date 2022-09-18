@@ -5,13 +5,19 @@
 
 #include <cstdint>
 #include <string>
+#include<set>
 
 //! \brief A class that assembles a series of excerpts from a byte stream (possibly out of order,
 //! possibly overlapping) into an in-order byte stream.
+// 对他们进行重组,按照顺序写入到bytestream里面
 class StreamReassembler {
   private:
     // Your code here -- add private members as necessary.
-
+    size_t next_index;
+    set<size_t> rec;
+    string s; //接受重组的数组
+    bool is_eof;
+    size_t unassembled_bytes_;
     ByteStream _output;  //!< The reassembled in-order byte stream
     size_t _capacity;    //!< The maximum number of bytes
 
