@@ -17,6 +17,11 @@ class TCPReceiver {
     //! Our data structure for re-assembling bytes.
     StreamReassembler _reassembler;
 
+//    WrappingInt32 _ackno;,代表可选的参数,再重载
+    std::optional<WrappingInt32> init_seq_peer= nullopt;
+    std::uint64_t checkpoint=0;
+
+    std::optional<WrappingInt32> ack_no=nullopt;
     //! The maximum number of bytes we'll store.
     size_t _capacity;
 
