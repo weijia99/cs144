@@ -12,8 +12,8 @@
 			"name": "sponge debug",//!挑个容易识别的名字
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}/build/tests/${fileBasenameNoExtension}", //!设置为测试程序源码相对应的目标程序路径
-			"args": [],
+			"program": "${workspaceFolder}/build/tests/send_extra", //!设置为测试程序源码相对应的目标程序路径
+			"args": [" CFLAGS='-g -O0"],
 			"stopAtEntry": false,
 			"cwd": "${workspaceFolder}",
 			"environment": [],
